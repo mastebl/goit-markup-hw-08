@@ -1,0 +1,27 @@
+.menu {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
+
+  &__link {
+    padding: 15px 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--main-font-color);
+    transition: color var(--tr-dur) var(--tr-t-fun);
+
+    &:hover,
+    &:focus {
+      color: var(--accent-color);
+    }
+  }
+}

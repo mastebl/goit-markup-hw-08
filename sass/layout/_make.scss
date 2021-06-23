@@ -1,0 +1,44 @@
+.make {
+  padding-top: 0px;
+}
+.make-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.make-title {
+  margin-bottom: 50px;
+}
+.make-img {
+  display: flex;
+}
+
+.make-img-list-item {
+&:not(:last-child) {
+  margin-right: 30px;
+}
+}
+
+.make-img-list-item-wrapper {
+  position: relative;
+}
+
+.make-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  color: #ffffff;
+  padding: 10px;
+  background-color: rgba(47, 48, 58, 0.8);
+  overflow: auto;
+  transform: translateY(-100%);
+  font-family: var(--main-font);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}

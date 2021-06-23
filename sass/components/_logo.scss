@@ -1,0 +1,31 @@
+.logo {
+  &__web {
+    font-family: var(--secondary-font);
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    color: var(--accent-color);
+
+    /* анимация для лого в хедере */
+    margin-right: 94px;
+    animation-duration: 1000ms;
+    animation-iteration-count: 3;
+  }
+
+  &__studio {
+    font-family: var(--secondary-font);
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+  }
+}
+
+.logo__studio_theme-light {
+  color: var(--main-font-color);
+}
+
+.logo__studio_theme-dark {
+  color: #ffffff;
+}
