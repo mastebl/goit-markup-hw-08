@@ -1,183 +1,205 @@
-.modal-form-head {
-  font-family: var(--main-font);
+.form {
+  padding-top: 2px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-bottom: 40px;
+}
+
+.form__title {
+  margin-top: 0;
+  margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
   text-align: center;
-  letter-spacing: 0.03em;
-  color: var(--main-font-color);
-  margin-bottom: 12px;
+  color: $title-text-color;
 }
 
-.modal-form {
+.form__field {
+  position: relative;
   display: flex;
   flex-direction: column;
+  margin: 0 0 10px 0;
 }
 
-.modal-form-input-wrapper {
-  position: relative;
-  display: block;
-  margin-top: 4px;
-}
-
-.modal-form-field {
-  font-family: var(--main-font);
-  font-weight: 400;
+.form__label {
+  margin-bottom: 4px;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
-  color: #757575;
-  margin-bottom: 10px;
 }
 
-.modal-form-input {
-  width: 100%;
-  height: 40px;
+.form__label {
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+}
+
+.form__input {
+  margin: 0;
   border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 42px;
+  padding: 12px;
+
+  transition-property: border;
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
 
   &:focus {
-    border-color: var(--accent-color);
+    border: 1px solid $accent-color;
     outline: none;
   }
 }
 
-.modal-form-icon {
+.form__input--secondary {
+  padding-left: 42px;
+  width: 100%;
+}
+
+.form__wrapper {
+  position: relative;
+  display: block;
+}
+
+.form__icon {
   position: absolute;
   top: 50%;
   left: 12px;
   transform: translateY(-50%);
-  display: block;
 
-  .modal-form-input:focus + & {
-    fill: var(--accent-color);
-    color: var(--accent-color);
+  transition-property: fill;
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
+
+  .form__input:focus + & {
+    fill: $accent-color;
   }
 }
 
-.modal-form-message {
-  width: 100%;
-  height: 120px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
+.form__field-comments {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form__comments {
   resize: none;
   padding: 12px 16px;
-  margin-top: 6px;
-  margin-bottom: 10px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
 
-  &::placeholder {
-    font-family: var(--main-font);
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.01em;
-    color: rgba(117, 117, 117, 0.5);
-  }
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+
+  transition-property: border;
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
 
   &:focus {
+    border: 1px solid $accent-color;
     outline: none;
-    border-color: var(--accent-color);
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+
+    color: rgba(117, 117, 117, 0.5);
   }
 }
 
-.form-field-policy {
+.form__field-policy {
   margin: 0 auto 30px 13px;
   vertical-align: middle;
   /* margin-bottom: 30px; */
 }
 
-.form-label-policy {
+.form__wrapper-policy--secondary {
   font-size: 14px;
   line-height: 1.71;
 }
 
 /* .checkbox прячем  */
-.form-icon-policy {
+.form__wrapper-policy {
   /* display: inline-block; */
   margin-right: 7px;
   width: 16px;
   height: 15px;
-  /* margin: auto 0; */
-  /* border: 1px solid rgba(33, 33, 33, 0.2); */
-  border: 2px solid var(--main-font-color);
+  border: 2px solid $title-text-color;
   box-sizing: border-box;
   border-radius: 2px;
-  /* padding: 12px;  */
   fill: transparent;
 
   transition-property: background-color, fill, border, outline;
-  transition-duration: var(--tr-dur);
-  transition-timing-function: var(--tr-t-fun);
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
+
+  .form__checkbox:checked + & {
+    fill: #ffffff;
+    background-color: $accent-color;
+    background-image: url('../img/icons.svg#icon-check');
+    background-size: contain;
+    background-origin: border-box;
+    border: none;
+  }
+
+  .form__checkbox:focus + & {
+    outline: 1px solid $accent-color;
+    background-size: contain;
+    background-origin: border-box;
+  }
+
+  .form__checkbox:checked:focus + & {
+    outline: 1px solid $title-text-color;
+    background-size: contain;
+    background-origin: border-box;
+    border: none;
+  }
 }
 
-/* .checkbox {
-    position: relative;  
-} */
-
-.policy-icon {
+.form__policy-icon {
   display: inline-block;
 }
 
-.label-policy {
+.form__label-policy {
   cursor: pointer;
   display: flex;
   align-items: center;
   /* margin-left: 54px; */
 }
 
-.checkbox:checked + .form-icon-policy {
-  /* border-color: transparent; */
-  /* var(--primary-white-color); */
-  fill: #ffffff;
-  background-color: var(--accent-color);
-  background-image: url("../img/decor/icons.svg#icon-check");
-  background-size: contain;
-  background-origin: border-box;
-  border: none;
-}
-
-.checkbox:focus + .form-icon-policy {
-  outline: 1px solid var(--accent-color);
-  background-size: contain;
-  background-origin: border-box;
-}
-
-.checkbox:checked:focus + .form-icon-policy {
-  outline: 1px solid var(--main-font-color);
-  background-size: contain;
-  background-origin: border-box;
-  border: none;
-}
-
-.policy-link {
-  color: var(--accent-color);
+.form__policy-link {
+  color: $accent-color;
   transition-property: color, border;
-  transition-duration: var(--tr-dur);
-  transition-timing-function: var(--tr-t-fun);
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
 
   &:hover,
   &:focus {
-    color: var(--accent-color);
-    border: 1px solid var(--accent-color);
+    color: #188ce8;
+    border: 1px solid $accent-color;
     outline: none;
   }
 }
 
-.modal-form-btn {
-  align-self: center;
-  border: none;
-  border-radius: 4px;
-  min-width: 200px;
-  height: 50px;
-  background-color: var(--accent-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  font-family: var(--main-font);
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  letter-spacing: 0.06em;
-  color: #ffffff;
-  cursor: pointer;
-  padding: 10px;
+.form__button--primery {
+  display: block;
+  margin: 0 auto;
+  align-items: center;
+  padding: 10px 55px;
+
+  transition-property: color, box-shadow;
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+  }
 }

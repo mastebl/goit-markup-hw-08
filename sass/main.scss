@@ -1,28 +1,33 @@
-// UTILS
-@import "./utils/variables";
-@import "./utils/visually-hidden";
+// BACE
 
-// BASE
-@import "./base/common";
-@import "./base/section";
-@import "./base/container";
+@import './components/common';
+@import './components/container';
+@import './components/section';
+
+// UTILS
+
+@import './utils/variables';
+@import './utils/visually-hidden';
 
 // COMPONENTS
-@import "./components/suptitle";
-@import "./components/backdrop";
-@import "./components/modal-window";
-@import "./components/modal-form";
-@import "./components/logo";
-@import "./components/menu";
-@import "./components/contacts";
-@import "./components/modal-btn";
+
+@import './components/logo';
+@import './components/mobile-nav';
+@import './components/nav';
+@import './components/contacts';
+@import './components/button';
+@import './components/social-link';
+@import './components/backdrop';
+@import './components/modal-window';
+@import './components/modal-form';
 
 // LAYOUT
-@import "./layout/header";
-@import "./layout/hero-studio";
-@import "./layout/advanages";
-@import "./layout/make";
-@import "./layout/team";
-@import "./layout/clients";
-@import "./layout/portfolio";
-@import "./layout/footer";
+
+@import './components/header';
+@import './components/hero';
+@import './components/section-feature';
+@import './components/section-box';
+@import './components/section-team';
+@import './components/section-customer';
+@import './components/section-portfolio';
+@import './components/footer';

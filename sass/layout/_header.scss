@@ -1,15 +1,22 @@
 .header {
-  padding-top: 15px;
-  padding-bottom: 15px;
   border-bottom: 1px solid #ececec;
-  height: 80px;
 }
-.header__container {
+
+.header__nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.navigation {
-  display: flex;
-  align-items: center;
+
+.header__logo {
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 88px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 93px;
+  }
 }
